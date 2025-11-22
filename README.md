@@ -1,2 +1,2 @@
 # wawa-portfolio
-![preview img](/wawa.png)
+![preview img](/cap.png)
