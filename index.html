@@ -6,24 +6,25 @@
     <title>Portfolio Data Analyst - WAWA LAURALIE</title>
     <style>
       :root {
-        --primary: #0a0e27;
-        --secondary: #1a2332;
-        --accent: #00d4ff;
-        --accent-gold: #ffd700;
-        --bg: #050812;
-        --text: #e8ecf7;
-        --text-muted: #9ca3af;
-        --card-bg: rgba(26, 35, 50, 0.8);
-        --card-border: rgba(0, 212, 255, 0.2);
-        --shadow: rgba(0, 0, 0, 0.6);
-        --gradient: linear-gradient(135deg, #0a0e27 0%, #1a2332 100%);
+        --primary: #0d0208;
+        --secondary: #1a0a0f;
+        --accent: #ff0033;
+        --accent-light: #ff3355;
+        --accent-dark: #cc0028;
+        --bg: #000000;
+        --text: #ffffff;
+        --text-muted: #b0b0b0;
+        --card-bg: rgba(26, 10, 15, 0.85);
+        --card-border: rgba(255, 0, 51, 0.3);
+        --shadow: rgba(255, 0, 51, 0.4);
+        --gradient: linear-gradient(135deg, #0d0208 0%, #1a0a0f 50%, #2d0a15 100%);
       }
 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Times New Roman", Times, serif;
+        font-family: 'Courier New', monospace;
       }
 
       body {
@@ -41,21 +42,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(
-            circle at 20% 80%,
-            rgba(0, 212, 255, 0.1) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 20%,
-            rgba(255, 215, 0, 0.08) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 40% 40%,
-            rgba(0, 212, 255, 0.05) 0%,
-            transparent 50%
-          );
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(255, 0, 51, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 51, 85, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(204, 0, 40, 0.08) 0%, transparent 50%);
         z-index: -2;
       }
 
@@ -66,99 +56,24 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: radial-gradient(
-            circle at 10% 20%,
-            rgba(0, 212, 255, 0.8) 2px,
-            transparent 2px
-          ),
-          radial-gradient(
-            circle at 20% 80%,
-            rgba(255, 215, 0, 0.6) 1px,
-            transparent 1px
-          ),
-          radial-gradient(
-            circle at 80% 10%,
-            rgba(0, 212, 255, 0.4) 1px,
-            transparent 1px
-          ),
-          radial-gradient(
-            circle at 90% 90%,
-            rgba(255, 215, 0, 0.5) 2px,
-            transparent 2px
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(0, 212, 255, 0.3) 1px,
-            transparent 1px
-          ),
-          radial-gradient(
-            circle at 30% 30%,
-            rgba(255, 215, 0, 0.4) 1px,
-            transparent 1px
-          ),
-          radial-gradient(
-            circle at 70% 70%,
-            rgba(0, 212, 255, 0.5) 1px,
-            transparent 1px
-          );
-        background-size: 80px 80px, 120px 120px, 100px 100px, 150px 150px,
-          90px 90px, 110px 110px, 130px 130px;
+        background-image: 
+          linear-gradient(0deg, transparent 24%, rgba(255, 0, 51, 0.05) 25%, rgba(255, 0, 51, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 51, 0.05) 75%, rgba(255, 0, 51, 0.05) 76%, transparent 77%, transparent),
+          linear-gradient(90deg, transparent 24%, rgba(255, 0, 51, 0.05) 25%, rgba(255, 0, 51, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 51, 0.05) 75%, rgba(255, 0, 51, 0.05) 76%, transparent 77%, transparent);
+        background-size: 50px 50px;
         z-index: -1;
-        animation: floatingParticles 15s linear infinite,
-          particlePulse 3s ease-in-out infinite alternate;
-      }
-
-      @keyframes floatingParticles {
-        0% {
-          transform: translateY(0px) translateX(0px);
-        }
-        25% {
-          transform: translateY(-20px) translateX(10px);
-        }
-        50% {
-          transform: translateY(-40px) translateX(-5px);
-        }
-        75% {
-          transform: translateY(-20px) translateX(-10px);
-        }
-        100% {
-          transform: translateY(0px) translateX(0px);
-        }
-      }
-
-      @keyframes particlePulse {
-        0% {
-          opacity: 0.3;
-        }
-        100% {
-          opacity: 0.8;
-        }
+        animation: gridMove 20s linear infinite;
       }
 
       @keyframes gridMove {
-        0% {
-          transform: translate(0, 0);
-        }
-        100% {
-          transform: translate(50px, 50px);
-        }
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
       }
 
       @keyframes digitalRain {
-        0% {
-          transform: translateY(-100px);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(100vh);
-          opacity: 0;
-        }
+        0% { transform: translateY(-100px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
       }
 
       .digital-rain {
@@ -175,40 +90,42 @@
         position: absolute;
         color: var(--accent);
         font-size: 12px;
-        font-family: "Courier New", monospace;
+        font-family: 'Courier New', monospace;
         animation: digitalRain 8s linear infinite;
         opacity: 0;
+        text-shadow: 0 0 5px var(--accent);
       }
 
       @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
       }
 
       @keyframes glow {
-        0%,
-        100% {
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        0%, 100% { 
+          box-shadow: 0 0 20px rgba(255, 0, 51, 0.4);
+          border-color: var(--accent);
         }
-        50% {
-          box-shadow: 0 0 30px rgba(0, 212, 255, 0.5),
-            0 0 40px rgba(0, 212, 255, 0.2);
+        50% { 
+          box-shadow: 0 0 40px rgba(255, 0, 51, 0.6), 0 0 60px rgba(255, 0, 51, 0.3);
+          border-color: var(--accent-light);
         }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
       }
 
       header {
         background: var(--gradient);
         color: white;
-        padding: 2rem;
+        padding: 2.5rem 2rem;
         text-align: center;
-        box-shadow: 0 4px 20px var(--shadow);
-        border-bottom: 2px solid var(--accent);
+        box-shadow: 0 4px 30px var(--shadow);
+        border-bottom: 3px solid var(--accent);
         position: relative;
+        overflow: hidden;
       }
 
       header::before {
@@ -218,41 +135,44 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-          45deg,
-          transparent 30%,
-          rgba(0, 212, 255, 0.1) 50%,
-          transparent 70%
-        );
+        background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 51, 0.1) 50%, transparent 100%);
+        animation: scanline 4s linear infinite;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 0, 51, 0.3), transparent);
         animation: shimmer 3s ease-in-out infinite;
       }
 
       @keyframes shimmer {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
+        0% { left: -100%; }
+        100% { left: 200%; }
       }
 
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         font-weight: 700;
-        background: linear-gradient(135deg, var(--accent), var(--accent-gold));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--accent);
+        text-shadow: 0 0 20px var(--accent), 0 0 40px rgba(255, 0, 51, 0.5);
         margin-bottom: 0.5rem;
         position: relative;
         z-index: 1;
+        letter-spacing: 3px;
       }
 
       header p {
-        font-size: 1.2rem;
-        color: var(--text-muted);
+        font-size: 1.3rem;
+        color: var(--text);
         position: relative;
         z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
       nav {
@@ -261,8 +181,9 @@
         gap: 0.5rem;
         background: var(--secondary);
         padding: 1rem;
-        box-shadow: 0 2px 10px var(--shadow);
+        box-shadow: 0 2px 15px var(--shadow);
         flex-wrap: wrap;
+        border-bottom: 1px solid var(--accent);
       }
 
       nav a {
@@ -270,12 +191,15 @@
         text-decoration: none;
         font-weight: 600;
         padding: 0.75rem 1.5rem;
-        border-radius: 25px;
+        border-radius: 0;
         transition: all 0.3s ease;
-        background: rgba(0, 212, 255, 0.1);
-        border: 1px solid rgba(0, 212, 255, 0.2);
+        background: transparent;
+        border: 2px solid var(--accent);
         position: relative;
         overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
       nav a::before {
@@ -285,24 +209,18 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(0, 212, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s;
+        background: var(--accent);
+        transition: left 0.4s;
+        z-index: -1;
       }
 
       nav a:hover::before {
-        left: 100%;
+        left: 0;
       }
 
       nav a:hover {
-        background: rgba(0, 212, 255, 0.2);
-        border-color: var(--accent);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        color: var(--bg);
+        box-shadow: 0 0 20px var(--accent), inset 0 0 20px rgba(255, 0, 51, 0.5);
       }
 
       section {
@@ -318,14 +236,8 @@
       }
 
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       .home {
@@ -334,27 +246,42 @@
         gap: 2rem;
         background: var(--card-bg);
         padding: 2.5rem;
-        border-radius: 20px;
+        border-radius: 0;
         box-shadow: 0 8px 32px var(--shadow);
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(10px);
-        animation: float 6s ease-in-out infinite;
+        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        position: relative;
+      }
+
+      .home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid var(--accent);
+        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        animation: glow 3s ease-in-out infinite;
       }
 
       .home img {
         width: 250px;
         height: 250px;
-        border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+        box-shadow: 0 0 30px var(--accent);
         border: 3px solid var(--accent);
         animation: glow 2s ease-in-out infinite alternate;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
       }
 
       .home-content h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
         color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
       .home-content p {
@@ -368,13 +295,13 @@
         padding: 2rem;
         margin: 1.5rem 0;
         box-shadow: 0 8px 32px var(--shadow);
-        border-radius: 20px;
         transition: all 0.3s ease;
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(10px);
         position: relative;
         overflow: hidden;
         text-align: center;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
       }
 
       .card::before {
@@ -384,112 +311,85 @@
         left: -2px;
         right: -2px;
         bottom: -2px;
-        background: linear-gradient(
-          45deg,
-          var(--accent),
-          var(--accent-gold),
-          var(--accent)
-        );
-        border-radius: 22px;
+        background: var(--accent);
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s ease;
       }
 
       .card:hover::before {
-        opacity: 1;
+        opacity: 0.3;
       }
 
       .card:hover {
-        transform: translateY(-10px) rotateY(5deg);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px var(--shadow), 0 0 40px rgba(255, 0, 51, 0.4);
       }
 
-      .projects-grid,
-      .gallery,
-      .certifications-gallery,
-      .skills-grid,
-      .about-grid,
-      .contact-grid {
+      .projects-grid, .gallery, .certifications-gallery, .skills-grid, .about-grid, .contact-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2rem;
       }
 
-      .project-card,
-      .gallery-item,
-      .cert-card,
-      .skill-card {
+      .project-card, .gallery-item, .cert-card, .skill-card {
         background: var(--card-bg);
         padding: 2rem;
-        border-radius: 20px;
         box-shadow: 0 8px 32px var(--shadow);
         text-align: center;
         transition: all 0.3s ease;
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(10px);
         position: relative;
         overflow: hidden;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
       }
 
-      .project-card::before,
-      .gallery-item::before,
-      .cert-card::before,
-      .skill-card::before {
+      .project-card::before, .gallery-item::before, .cert-card::before, .skill-card::before {
         content: "";
         position: absolute;
         top: -2px;
         left: -2px;
         right: -2px;
         bottom: -2px;
-        background: linear-gradient(
-          45deg,
-          var(--accent),
-          var(--accent-gold),
-          var(--accent)
-        );
-        border-radius: 22px;
+        background: var(--accent);
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s ease;
       }
 
-      .project-card:hover::before,
-      .gallery-item:hover::before,
-      .cert-card:hover::before,
-      .skill-card:hover::before {
-        opacity: 1;
+      .project-card:hover::before, .gallery-item:hover::before, .cert-card:hover::before, .skill-card:hover::before {
+        opacity: 0.3;
       }
 
-      .project-card:hover,
-      .gallery-item:hover,
-      .cert-card:hover,
-      .skill-card:hover {
-        transform: translateY(-10px) rotateY(5deg);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+      .project-card:hover, .gallery-item:hover, .cert-card:hover, .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px var(--shadow), 0 0 40px rgba(255, 0, 51, 0.4);
       }
 
       .project-icon {
         width: 80px;
         height: 80px;
         margin: 0 auto 1.5rem;
-        background: linear-gradient(135deg, var(--accent), var(--accent-gold));
-        border-radius: 50%;
+        background: var(--accent);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 8px 25px var(--shadow);
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
       .project-card h3 {
         color: var(--accent);
         margin-bottom: 1rem;
         font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
       .project-card .tech-stack {
-        color: var(--accent-gold);
+        color: var(--accent-light);
         font-weight: 600;
         font-size: 0.9rem;
         margin: 1rem 0;
@@ -502,23 +402,25 @@
       .project-links a {
         color: var(--accent);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
         margin: 0 1rem;
         padding: 0.5rem 1rem;
-        border: 1px solid var(--accent);
-        border-radius: 20px;
+        border: 2px solid var(--accent);
         display: inline-block;
+        clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
       }
 
       .project-links a:hover {
-        color: var(--accent-gold);
-        background: rgba(0, 212, 255, 0.1);
+        background: var(--accent);
+        color: var(--bg);
+        box-shadow: 0 0 20px var(--accent);
       }
 
       .gallery-item img {
         width: 100%;
         height: 200px;
         object-fit: cover;
+        border-bottom: 2px solid var(--accent);
       }
 
       .gallery-item .content {
@@ -528,29 +430,31 @@
       .gallery-item h3 {
         color: var(--accent);
         margin-bottom: 0.5rem;
+        text-transform: uppercase;
       }
 
       .cert-icon {
         width: 80px;
         height: 80px;
         margin: 0 auto 1.5rem;
-        background: linear-gradient(135deg, var(--accent), var(--accent-gold));
-        border-radius: 50%;
+        background: var(--accent);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 8px 25px var(--shadow);
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
       .cert-card h3 {
         color: var(--accent);
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
+        text-transform: uppercase;
       }
 
       .cert-card .issuer {
-        color: var(--accent-gold);
+        color: var(--accent-light);
         font-weight: 600;
         font-size: 0.9rem;
       }
@@ -565,32 +469,32 @@
         color: var(--accent);
         font-weight: 600;
         margin-bottom: 0.5rem;
+        text-transform: uppercase;
       }
 
       .skill-bar {
-        background: rgba(0, 212, 255, 0.1);
+        background: rgba(255, 0, 51, 0.1);
         height: 8px;
-        border-radius: 4px;
         overflow: hidden;
+        border: 1px solid var(--accent);
       }
 
       .skill-progress {
-        background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+        background: var(--accent);
         height: 100%;
-        border-radius: 4px;
         animation: fillBar 2s ease-out;
+        box-shadow: 0 0 10px var(--accent);
       }
 
       @keyframes fillBar {
-        from {
-          width: 0%;
-        }
+        from { width: 0%; }
       }
 
       .card h3 {
         color: var(--accent);
         margin-bottom: 1rem;
         font-size: 1.2rem;
+        text-transform: uppercase;
       }
 
       .card a {
@@ -600,20 +504,21 @@
       }
 
       .card a:hover {
-        color: var(--accent-gold);
+        color: var(--accent-light);
+        text-shadow: 0 0 10px var(--accent);
       }
 
       .card-icon {
         width: 60px;
         height: 60px;
         margin: 0 auto 1rem;
-        background: linear-gradient(135deg, var(--accent), var(--accent-gold));
-        border-radius: 50%;
+        background: var(--accent);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.5rem;
-        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 6px 20px var(--shadow);
+        clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
       }
 
       footer {
@@ -623,7 +528,7 @@
         color: white;
         margin-top: 3rem;
         box-shadow: 0 -4px 20px var(--shadow);
-        border-top: 2px solid var(--accent);
+        border-top: 3px solid var(--accent);
       }
 
       h2 {
@@ -632,6 +537,9 @@
         color: var(--accent);
         text-align: center;
         position: relative;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 0 10px var(--accent);
       }
 
       h2::after {
@@ -640,21 +548,21 @@
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 60px;
+        width: 80px;
         height: 3px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-        border-radius: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 10px var(--accent);
       }
 
       .cv-container {
         max-width: 900px;
         margin: 0 auto;
         background: var(--card-bg);
-        border-radius: 20px;
         padding: 3rem;
         box-shadow: 0 10px 40px var(--shadow);
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(15px);
+        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
       }
 
       .cv-header {
@@ -668,9 +576,9 @@
       .cv-photo img {
         width: 120px;
         height: 120px;
-        border-radius: 50%;
         border: 3px solid var(--accent);
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        box-shadow: 0 0 20px var(--accent);
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
       .cv-info h1 {
@@ -678,10 +586,11 @@
         font-size: 2.2rem;
         margin-bottom: 0.5rem;
         font-weight: bold;
+        text-shadow: 0 0 10px var(--accent);
       }
 
       .cv-info h2 {
-        color: var(--accent-gold);
+        color: var(--accent-light);
         font-size: 1.3rem;
         margin-bottom: 1rem;
         font-weight: normal;
@@ -697,9 +606,9 @@
       .cv-section {
         margin: 2rem 0;
         padding: 1.5rem;
-        background: rgba(26, 35, 50, 0.3);
-        border-radius: 12px;
+        background: rgba(26, 10, 15, 0.5);
         border-left: 4px solid var(--accent);
+        box-shadow: 0 0 20px rgba(255, 0, 51, 0.2);
       }
 
       .cv-section h3 {
@@ -709,69 +618,54 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        text-transform: uppercase;
       }
 
-      .job,
-      .education,
-      .project {
+      .job, .education, .project {
         margin: 1.5rem 0;
         padding: 1rem;
         background: var(--card-bg);
-        border-radius: 8px;
         box-shadow: 0 8px 32px var(--shadow);
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
         text-align: left;
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
-      .job::before,
-      .education::before,
-      .project::before {
+      .job::before, .education::before, .project::before {
         content: "";
         position: absolute;
         top: -2px;
         left: -2px;
         right: -2px;
         bottom: -2px;
-        background: linear-gradient(
-          45deg,
-          var(--accent),
-          var(--accent-gold),
-          var(--accent)
-        );
-        border-radius: 10px;
+        background: var(--accent);
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s ease;
       }
 
-      .job:hover::before,
-      .education:hover::before,
-      .project:hover::before {
-        opacity: 1;
+      .job:hover::before, .education:hover::before, .project:hover::before {
+        opacity: 0.3;
       }
 
-      .job:hover,
-      .education:hover,
-      .project:hover {
-        transform: translateY(-10px) rotateY(5deg);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+      .job:hover, .education:hover, .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px var(--shadow);
       }
 
-      .job-header,
-      .edu-header {
+      .job-header, .edu-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 0.5rem;
       }
 
-      .job-header h4,
-      .edu-header h4 {
-        color: var(--accent-gold);
+      .job-header h4, .edu-header h4 {
+        color: var(--accent-light);
         font-size: 1.1rem;
         font-weight: bold;
       }
@@ -780,20 +674,18 @@
         background: var(--accent);
         color: var(--bg);
         padding: 0.3rem 0.8rem;
-        border-radius: 15px;
         font-size: 0.8rem;
         font-weight: bold;
+        clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
       }
 
-      .company,
-      .school {
+      .company, .school {
         color: var(--accent);
         font-weight: bold;
         margin-bottom: 0.5rem;
       }
 
-      .job ul,
-      .project p {
+      .job ul, .project p {
         margin: 0.5rem 0;
         line-height: 1.6;
       }
@@ -811,67 +703,52 @@
         color: var(--accent);
       }
 
-      .skills-section,
-      .certifications-list,
-      .languages {
+      .skills-section, .certifications-list, .languages {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2rem;
       }
 
-      .skill-category,
-      .cert-item,
-      .lang-item {
+      .skill-category, .cert-item, .lang-item {
         background: var(--card-bg);
         padding: 1rem;
-        border-radius: 8px;
         box-shadow: 0 8px 32px var(--shadow);
-        border: 1px solid var(--card-border);
+        border: 2px solid var(--card-border);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
         text-align: center;
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       }
 
-      .skill-category::before,
-      .cert-item::before,
-      .lang-item::before {
+      .skill-category::before, .cert-item::before, .lang-item::before {
         content: "";
         position: absolute;
         top: -2px;
         left: -2px;
         right: -2px;
         bottom: -2px;
-        background: linear-gradient(
-          45deg,
-          var(--accent),
-          var(--accent-gold),
-          var(--accent)
-        );
-        border-radius: 10px;
+        background: var(--accent);
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s ease;
       }
 
-      .skill-category:hover::before,
-      .cert-item:hover::before,
-      .lang-item:hover::before {
-        opacity: 1;
+      .skill-category:hover::before, .cert-item:hover::before, .lang-item:hover::before {
+        opacity: 0.3;
       }
 
-      .skill-category:hover,
-      .cert-item:hover,
-      .lang-item:hover {
-        transform: translateY(-10px) rotateY(5deg);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+      .skill-category:hover, .cert-item:hover, .lang-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px var(--shadow);
       }
 
       .skill-category h5 {
-        color: var(--accent-gold);
+        color: var(--accent-light);
         margin-bottom: 0.5rem;
         font-weight: bold;
+        text-transform: uppercase;
       }
 
       .cert-item {
@@ -887,10 +764,9 @@
       }
 
       .cert-item span {
-        background: var(--accent-gold);
+        background: var(--accent);
         color: var(--bg);
         padding: 0.2rem 0.6rem;
-        border-radius: 10px;
         font-size: 0.8rem;
         font-weight: bold;
       }
@@ -904,9 +780,10 @@
       }
 
       .lang-item span:first-child {
-        color: var(--accent-gold);
+        color: var(--accent-light);
         font-weight: bold;
         margin-bottom: 0.3rem;
+        text-transform: uppercase;
       }
 
       @media (max-width: 768px) {
@@ -938,15 +815,7 @@
           padding: 1rem;
         }
 
-        .projects-grid,
-        .gallery,
-        .certifications-gallery,
-        .skills-grid,
-        .about-grid,
-        .contact-grid,
-        .skills-section,
-        .certifications-list,
-        .languages {
+        .projects-grid, .gallery, .certifications-gallery, .skills-grid, .about-grid, .contact-grid, .skills-section, .certifications-list, .languages {
           grid-template-columns: 1fr;
         }
 
@@ -981,7 +850,7 @@
     <main>
       <section id="accueil" class="active">
         <div class="home">
-          <img src="ma_photo.jpg" alt="Photo de WAWA LAURALIE" />
+          <img src="ma_photo.png" alt="Photo de WAWA LAURALIE" />
           <div class="home-content">
             <h2>Bienvenue dans mon univers data !</h2>
             <p>
@@ -1009,12 +878,13 @@
             <div class="project-icon">📊</div>
             <h3>MEMOIRE DE FIN DE CYLCLE</h3>
             <p>
-              Conception et mise en œuvre d’un reporting pour la gestion des
-              incidents liés à l’exploitation du réseau national du haut débit
+              Conception et mise en œuvre d'un reporting pour la gestion des
+              incidents liés à l'exploitation du réseau national du haut débit
               (rnhd)
             </p>
             <p class="tech-stack">
-              <strong>Technologies :</strong> Python, Power bi, SQL, C#
+              <strong>Technologies :</strong> Python, Scikit-learn, Pandas,
+              Power BI
             </p>
             <div class="project-links">
               <a href="WAWALAURALIEMEMOIRE.pdf" target="_blank">📄 PDF</a>
@@ -1028,12 +898,12 @@
               EXPONENTIEL
             </h3>
             <p>
-              PREDIRE LES VENTES DES MILLIERS DE FFAMILLES DE PRODUITS VENDUS 
-DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR 
-
+              ANALYSE DESCRIPTIVE DE SERIE TEMPORELLE ET PREVISION PAR LISSAGE
+              EXPONENTIEL
             </p>
             <p class="tech-stack">
-              <strong>Technologies :</strong> R, Power BI
+              <strong>Technologies :</strong> Python, Scikit-learn, Pandas,
+              Power BI
             </p>
             <div class="project-links">
               <a href="TEMPORELLE.pdf" target="_blank">📄 PDF</a>
@@ -1049,7 +919,8 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               DETERMINENT LE DEVELOPPEMENT GLOBAL DU PAYS
             </p>
             <p class="tech-stack">
-              <strong>Technologies :</strong> R
+              <strong>Technologies :</strong> Python, Scikit-learn, Pandas,
+              Power BI
             </p>
             <div class="project-links">
               <a href="ACP.pdf" target="_blank">📄 PDF</a>
@@ -1070,7 +941,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               chaque police pour optimiser la tarification et la gestion des
               sinistres....
             </p>
-            <p class="tech-stack"><strong>Technologies :</strong> R,Power BI</p>
+            <p class="tech-stack"><strong>Technologies :</strong> Python</p>
             <div class="project-links">
               <a href="WAWALAURALIEECONOMETRE.pdf" target="_blank">📄 PDF</a>
             </div>
@@ -1111,6 +982,24 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               </p>
             </div>
           </div>
+          <div class="gallery-item">
+            <img src="im.jpg" alt="TAXI FLOTTE" />
+            <div class="content">
+              <h3>TABLEAU DE BORD TAXI FLOTTE</h3>
+              <p>
+                Tableau de bord pour le suivi des KPI de la flotte de taxis.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="ima.jpg" alt="TABLEAU DE BORD TAXI FLOTTE" />
+            <div class="content">
+              <h3>DASHBOARD TAXI FLOTTE</h3>
+              <p>
+                Tableau pour de la flotte de taxis.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1137,12 +1026,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
           <div class="card">
             <div class="card-icon">📧</div>
             <h3>Informations de contact</h3>
-            <p>
-              <strong>Email :</strong>
-              <a href="mailto:lauraliedjocewawa@gmail.com" target="_blank"
-                >lauraliedjocewawa@gmail.com</a
-              >
-            </p>
+            <p><strong>Email :</strong> lauraliedjocewawa@gmail.com</p>
             <p><strong>Téléphone :</strong> +225 05 55 30 48 34</p>
             <p>
               <strong>LinkedIn :</strong>
@@ -1150,7 +1034,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
                 >linkedin.com/in/wawa-lauralie</a
               >
             </p>
-            <p><strong>Localisation :</strong> Abidjan, Koumassi</p>
+            <p><strong>Localisation :</strong> Abidjan, Côte d'Ivoire</p>
           </div>
           <div class="card">
             <div class="card-icon">🚀</div>
@@ -1169,18 +1053,13 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
         <div class="cv-container">
           <div class="cv-header">
             <div class="cv-photo">
-              <img src="ma_photo.jpg" alt="WAWA LAURALIE" />
+              <img src="ma_photo.png" alt="WAWA LAURALIE" />
             </div>
             <div class="cv-info">
               <h1>WAWA LAURALIE MARIE MICHELLE</h1>
               <h2>Data Analyst | DATA ANALYST</h2>
               <div class="contact-info">
-                <p>
-              <strong>Email :</strong>
-              <a href="mailto:lauraliedjocewawa@gmail.com" target="_blank"
-                >lauraliedjocewawa@gmail.com</a
-              >
-            </p>
+                <p>📧 lauraliedjocewawa@gmail.com</p>
                 <p>📱 +225 05 55 30 48 34</p>
                 <a href="https://linkedin.com/in/wawa-lauralie" target="_blank"
                   >🛜 linkedin.com/in/wawa-lauralie</a
@@ -1196,14 +1075,14 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             <h3>🎯 PROFIL PROFESSIONNEL</h3>
             <p>
               Assistante au sein du département des opérations bancaires, au
-              service analyse vérification, Je participe à l’extraction et au
+              service analyse vérification, Je participe à l'extraction et au
               traitement des fichiers nécessaires aux opérations financières, en
-              veillant à l’intégrité et à la cohérence des données. Je suis
+              veillant à l'intégrité et à la cohérence des données. Je suis
               chargée du suivi des transactions et des opérations en cours,
-              notamment pour identifier d’éventuels suspens. Je contribue aussi
-              à l’automatisation de certaines tâches récurrentes à l’aide de
+              notamment pour identifier d'éventuels suspens. Je contribue aussi
+              à l'automatisation de certaines tâches récurrentes à l'aide de
               tableaux croisés dynamiques et à la production des rapports
-              d’activités mensuels destinés à faciliter le pilotage des
+              d'activités mensuels destinés à faciliter le pilotage des
               opérations.
             </p>
           </div>
@@ -1213,8 +1092,34 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             <div class="projects-grid">
               <div class="job">
                 <div class="job-header">
-                  <h4>ASSISTANTE ANALYSTE DES OPERATIONS à Orabank</h4>
-                  <span class="period">14 AVRIL 2025 - AUJOURD’HUI</span>
+                  <h4>
+                    CONSULTANTE DATA ANALYST à ITELSA GROUP
+                  </h4>
+                  <span class="period">06 OCTOBRE 2024 - AUJOURD'HUI</span>
+                </div>
+                <p class="company">ITELSA GROUP</p>
+                <ul>
+                  <li>
+                    Suivi en temps réel des activités à travers une plateforme numérique dédiée, 
+                    assurant une supervision de continue et efficace
+                  </li>
+                  <li>
+                    Traitement et analyse approfondie des données d'exploitation issues
+                    des systèmes GPS, des rapports d'incidents et des indicateurs de performances
+                  </li>
+                  <li>
+                    Elaboration de tableaux de bord dynamiques et de rapports
+                    analytiques destinés à appuyer la prise de décision stratégique
+                  </li>
+                  <li>Piloter les projets d'expansion et d'innovation</li>
+                  <li>Assurer la maintenance des outils de supervision</li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-header">
+                  <h4>STAGIAIRE ANALYSTE DES OPERATIONS à Orabank</h4>
+                  <span class="period">14 AVRIL 2025 - 30 SEPTEMBRE 2025</span>
                 </div>
                 <p class="company">Orabank</p>
                 <ul>
@@ -1230,7 +1135,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               <div class="job">
                 <div class="job-header">
                   <h4>
-                    STAGIAIRE DATA ANALYSTE à ANSUT : Agence Nationale du
+                    STAGIAIRE DATA ANALYST à ANSUT : Agence Nationale du
                     Service Universel des télécommunications
                   </h4>
                   <span class="period">13 OCTOBRE 2024 - 11 AVRIL 2025</span>
@@ -1275,13 +1180,13 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               <div class="education">
                 <div class="edu-header">
                   <h4>
-                    Master Statistique Économétrie Machine Learning
+                    Master 2 en Statistique Econométrie et Machine Learning
                   </h4>
                   <span class="period">2023 - 2024</span>
                 </div>
                 <p class="school">
-                  Institut supérieur de statistique d’économétrie et de Data
-                  Science, Abidjan-Côte d’Ivoire
+                  Institut supérieur de statistique d'économétrie et de Data
+                  Science, Abidjan-Côte d'Ivoire
                 </p>
               </div>
 
@@ -1290,7 +1195,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
                   <h4>Master 1 en Statistique Economie</h4>
                   <span class="period">2022 - 2023</span>
                 </div>
-                <p class="school">Université Internationale Privée d’Abidjan</p>
+                <p class="school">Université Internationale Privée d'Abidjan</p>
               </div>
 
               <div class="education">
@@ -1298,7 +1203,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
                   <h4>Licence en Economie</h4>
                   <span class="period">2019 - 2022</span>
                 </div>
-                <p class="school">Université Internationale Privée d’Abidjan</p>
+                <p class="school">Université Internationale Privée d'Abidjan</p>
               </div>
 
               <div class="education">
@@ -1357,7 +1262,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
               <div class="skill-category">
                 <h5>R</h5>
                 <p>
-                  Maitrise de l’analyse des données et leurs traitement,
+                  Maitrise de l'analyse des données et leurs traitement,
                   Visualisation, prédiction
                 </p>
               </div>
@@ -1377,40 +1282,27 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             <div class="projects-grid">
               <div class="project">
                 <h4>MEMOIRE DE FIN DE CYLCLE</h4>
-                <p><strong>Technologies :</strong> Power BI, SQL, C#</p>
+                <p><strong>Technologies :</strong> Python</p>
                 <p>
-                  Conception et mise en œuvre d’un reporting pour la gestion des
-                  incidents liés à l’exploitation du réseau national du haut
-                  débit (RNHD)
+                  Conception et mise en œuvre d'un reporting pour la gestion des
+                  incidents liés à l'exploitation du réseau national du haut
+                  débit (rnhd)
                 </p>
               </div>
+
               <div class="project">
-                <h4>ANALYSE DES DONNEES MULTIDIMENSIONNELLES</h4>
-                <p><strong>Technologies :</strong> R</p>
-                <p>
-                  Analyse des données multidimensionnelles pour catégoriser les pays en
-                  fonction des facteurs socio-économiques et sanitaires qui
-                  déterminent le développement global du pays
-                </p>
-              </div>
-              <div class="project">
-                <h4>ANALYSE DESCRIPTIVE DE SERIE TEMPORELLE ET PREVISION PAR LISSAGE EXPONENTIEL</h4>
-                <p><strong>Technologies :</strong> R, Power BI</p>
-                <p>
-                  Prédire les ventes des milliers de familles de produits vendus
-                  dans les magasins de l’épicerie "Favorita" situés en Équateur
-                </p>
-              </div>
-              <div class="project">
-                <h4>Modélisation de coût de probabilité de la survenance du sinistre</h4>
-                <p><strong>Technologies :</strong> R, Power BI</p>
+                <h4>
+                  Modélisation de cout de probabilite de la survenance du
+                  sinistre
+                </h4>
+                <p><strong>Technologies :</strong> Python</p>
                 <p>
                   L'assurance automobile constitue une part significative de
                   l'activité des sociétés d'assurance IARD (Incendie, Accidents
                   et Risques Divers). Ce secteur, tout en étant très compétitif,
                   exige une compréhension approfondie des facteurs de risque
                   associés à chaque police pour optimiser la tarification et la
-                  gestion des sinistres...
+                  gestion des sinistres......
                 </p>
               </div>
             </div>
@@ -1420,8 +1312,8 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             <h3>🎊 QUALITES</h3>
             <div class="certifications-list">
               <div class="cert-item">
-                <h5>Bon esprit d’équipe</h5>
-                <h5>Capacité d’adaptation</h5>
+                <h5>Bon esprit d'équipe</h5>
+                <h5>Capacité d'adaptation</h5>
                 <h5>Patience</h5>
                 <h5>Rigoureuse</h5>
               </div>
@@ -1433,7 +1325,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             <div class="certifications-list">
               <div class="cert-item">
                 <h5>
-                  Certifications de fin de formation : Maîtrise de l'analyse de
+                  Certifications de fin de formation : Maitrise de l'analyse de
                   données
                 </h5>
                 <span>22/07/2023</span>
@@ -1471,12 +1363,16 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
         window.scrollTo({ top: 0, behavior: "smooth" });
         document
           .querySelectorAll("nav a")
-          .forEach((a) => (a.style.background = "rgba(0, 212, 255, 0.1)"));
-        event.target.style.background = "rgba(0, 212, 255, 0.3)";
+          .forEach((a) => (a.style.background = "transparent"));
+        event.target.style.background = "var(--accent)";
+        event.target.style.color = "var(--bg)";
       }
 
       document.addEventListener("DOMContentLoaded", function () {
         showPage("accueil");
+        document.querySelectorAll("nav a")[0].style.background = "var(--accent)";
+        document.querySelectorAll("nav a")[0].style.color = "var(--bg)";
+        
         document
           .querySelectorAll(".card, .cert-card, .gallery-item")
           .forEach((card) => {
@@ -1504,8 +1400,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
 
       function createDigitalRain() {
         const rainContainer = document.getElementById("digitalRain");
-        const characters =
-          "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*()_+-=[]{}|;:,.<>?";
+        const characters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*()_+-=[]{}|;:,.<>?";
 
         function createRainDrop() {
           const drop = document.createElement("div");
@@ -1553,7 +1448,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
             trailElement.style.top = e.clientY + "px";
             trailElement.style.width = "4px";
             trailElement.style.height = "4px";
-            trailElement.style.background = "#00d4ff";
+            trailElement.style.background = "var(--accent)";
             trailElement.style.borderRadius = "50%";
             trailElement.style.pointerEvents = "none";
             trailElement.style.zIndex = "9999";
@@ -1566,7 +1461,7 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
         const style = document.createElement("style");
         style.textContent = `
         @keyframes fadeOutTrail {
-          0% { opacity: 0.8; transform: scale(1); }
+          0% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 10px var(--accent); }
           100% { opacity: 0; transform: scale(0.3); }
         }
       `;
@@ -1576,11 +1471,10 @@ DANS LES MAGASINS DE L’EPICERIE "FAVORITA" SITUES EN EQUATEUR
       window.addEventListener("load", function () {
         const headerTitle = document.querySelector("header h1");
         const originalText = headerTitle.textContent;
-        typeWriter(headerTitle, originalText, 150);
+        typeWriter(headerTitle, originalText, 100);
         createDigitalRain();
         createCursorTrail();
       });
     </script>
   </body>
 </html>
-
